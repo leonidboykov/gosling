@@ -1,0 +1,59 @@
+builds:
+  - main: ./cmd/gosling
+    binary: gosling
+    goarch:
+      - 386
+      - amd64
+    goos:
+      - windows
+      - darwin
+      - linux
+    env:
+      - CGO_ENABLED=0
+checksum:
+  name_template: '{{ .ProjectName }}_checksums.txt'
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+      - typo
+      - Merge pull request
+      - Merge branch
+archive:
+  replacements:
+    darwin: macOS
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+  format_overrides:
+    - goos: windows
+      format: zip
+brew:
+  github:
+    owner: leonidboykov
+    name: homebrew-tap
+  folder: Formula
+  homepage: https://github.com/leonidboykov/gosling
+  description: HTML redirects generator
+  test: |
+    system "#{bin}/gosling -h" # TODO: Replace with an actual test
+scoop:
+  bucket:
+    owner: leonidboykov
+    name: scoop-bucket
+  homepage: https://github.com/leonidboykov/gosling
+  description: HTML redirects generator
+  license: MIT
+dockers:
+  - image: smarthut/agent
+    goos: linux
+    goarch: amd64
+    goarm: ''
+    tag_templates:
+      - "{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
+      - "{{ .Major }}.{{ .Minor }}"
+      - latest
