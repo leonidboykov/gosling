@@ -1,3 +1,3 @@
 FROM scratch
 COPY gosling /
-ENTRYPOINT ["/agent"]
+ENTRYPOINT ["/gosling"]
