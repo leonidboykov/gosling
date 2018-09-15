@@ -32,10 +32,10 @@ func main() {
 
 	redir, err := gosling.NewRedirects(redirectsFlag)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "unable to read redirects file: %s", err)
+		fmt.Fprintf(os.Stderr, "unable to read redirects file: %s\n", err)
 	}
 
 	if err := gosling.BuildRedirects(redir, outputFlag); err != nil {
-		fmt.Fprintf(os.Stderr, "unable to build redirects: %s", err)
+		fmt.Fprintf(os.Stderr, "unable to build redirects: %s\n", err)
 	}
 }
