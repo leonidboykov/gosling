@@ -78,9 +78,5 @@ func BuildRedirect(link string, wr io.Writer) error {
 		return err
 	}
 
-	if err := tmpl.Execute(wr, &data); err != nil {
-		return err
-	}
-
-	return nil
+	return tmpl.Execute(wr, &data)
 }
