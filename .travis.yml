@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - go build cmd/gosling/
+  - go test ./...
 
 after_success:
   - test -n "$TRAVIS_TAG" && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
