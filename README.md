@@ -6,6 +6,21 @@
 
 gosling generates HTML redirects from `redirects.json` file provided.
 
+## Installing
+
+On macOS
+
+    brew install leonidboykov/tap/gosling
+
+On Windows
+
+    scoop bucket add gosling https://github.com/leonidboykov/scoop-bucket.git
+    scoop install gosling
+
+Check out [docs](https://leonidboykov.github.io/gosling/) for additional information.
+
+Development documantation is available on [GoDoc](https://godoc.org/github.com/leonidboykov/gosling).
+
 ## License
 
-gosling is free software licensed under the [MIT](LICENSE) license.
+`gosling` is free software licensed under the MIT license.

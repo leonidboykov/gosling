@@ -38,7 +38,7 @@ brew:
     owner: leonidboykov
     name: homebrew-tap
   folder: Formula
-  homepage: https://github.com/leonidboykov/gosling
+  homepage: https://leonidboykov.github.io/gosling/
   description: HTML redirects generator
   test: |
     system "#{bin}/gosling -h" # TODO: Replace with an actual test
@@ -46,7 +46,7 @@ scoop:
   bucket:
     owner: leonidboykov
     name: scoop-bucket
-  homepage: https://github.com/leonidboykov/gosling
+  homepage: https://leonidboykov.github.io/gosling/
   description: HTML redirects generator
   license: MIT
 dockers:
