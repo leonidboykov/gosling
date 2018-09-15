@@ -50,7 +50,7 @@ scoop:
   description: HTML redirects generator
   license: MIT
 dockers:
-  - image: smarthut/agent
+  - image: leonidboykov/gosling
     goos: linux
     goarch: amd64
     goarm: ''
