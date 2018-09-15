@@ -19,7 +19,7 @@ On Windows
 
 Check out [docs](https://leonidboykov.github.io/gosling/) for additional information.
 
-Development documantation is available on [GoDoc](https://godoc.org/github.com/leonidboykov/gosling).
+Development documentation is available on [GoDoc](https://godoc.org/github.com/leonidboykov/gosling).
 
 ## License
 
