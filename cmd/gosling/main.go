@@ -20,22 +20,24 @@ const (
 )
 
 var (
-	outputFlag    string
-	redirectsFlag string
+	outputFlag    = flag.String("o", defaultOutput, "specify output folder")
+	redirectsFlag = flag.String("r", defaultRedirects, "specify redirects file")
+	versionFlag   = flag.Bool("v", false, "print version")
 )
 
 func main() {
-	// Parse flags
-	flag.StringVar(&outputFlag, "o", defaultOutput, "specify output folder")
-	flag.StringVar(&redirectsFlag, "r", defaultRedirects, "specify redirects file")
 	flag.Parse()
+	if *versionFlag {
+		fmt.Printf("%s version %s\n", os.Args[0], version)
+		os.Exit(0)
+	}
 
-	redir, err := gosling.NewRedirects(redirectsFlag)
+	redir, err := gosling.NewRedirects(*redirectsFlag)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "unable to read redirects file: %s\n", err)
 	}
 
-	if err := gosling.BuildRedirects(redir, outputFlag); err != nil {
+	if err := gosling.BuildRedirects(redir, *outputFlag); err != nil {
 		fmt.Fprintf(os.Stderr, "unable to build redirects: %s\n", err)
 	}
 }

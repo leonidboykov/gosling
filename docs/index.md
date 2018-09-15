@@ -65,6 +65,10 @@ will write HTML files to `build` folder instead of `public`
 
 will use `my_redirects.json` file instead of `redirects.json`
 
+    gosling -v
+
+will print current verson and exit
+
 # Using with GitLab CI
 
 There is also Docker image available on [Docker Hub](https://hub.docker.com/r/leonidboykov/gosling). You can use the following `.gitlab-ci.yml` config file to build redirects with `gosling`

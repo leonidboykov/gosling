@@ -41,7 +41,7 @@ brew:
   homepage: https://leonidboykov.github.io/gosling/
   description: HTML redirects generator
   test: |
-    system "#{bin}/gosling -h" # TODO: Replace with an actual test
+    system "#{bin}/gosling -v"
 scoop:
   bucket:
     owner: leonidboykov
