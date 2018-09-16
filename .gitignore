@@ -1,5 +1,6 @@
 ### Getmoe ###
 gosling
+!gosling/
 coverage.txt
 *.html
 redirects.json
