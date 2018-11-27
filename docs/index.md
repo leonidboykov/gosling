@@ -1,5 +1,5 @@
 ---
-title: Gosling Documantation
+title: Gosling Documentation
 ---
 Gosling is a lightweight HTTP redirects generator.
 
