@@ -1,4 +1,4 @@
-name: Gosling
+name: build
 
 on:
   push:
@@ -13,9 +13,12 @@ jobs:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Set up Go
         uses: actions/setup-go@v1
         with:
           go-version: 1.14.x
-      - run: go build ./cmd/gosling
+      - run: |
+          go build ./cmd/gosling
+          gosling -v
