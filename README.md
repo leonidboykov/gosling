@@ -17,6 +17,10 @@ On Windows
     scoop bucket add gosling https://github.com/leonidboykov/scoop-bucket.git
     scoop install gosling
 
+Docker
+
+    docker push leonidboykov/gosling:tagname
+
 Check out [docs](https://leonidboykov.github.io/gosling/) for additional information.
 
 Development documentation is available on [GoDoc](https://godoc.org/github.com/leonidboykov/gosling).

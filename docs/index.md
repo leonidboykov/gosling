@@ -20,6 +20,10 @@ For Windows you may use [scoop](https://scoop.sh) to download `gosling` from the
     scoop bucket add gosling https://github.com/leonidboykov/scoop-bucket.git
     scoop install gosling
 
+#### Docker
+
+    docker push leonidboykov/gosling:tagname
+
 #### Development version
 
 You may also get the latest version from `master` branch with

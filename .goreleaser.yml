@@ -1,3 +1,4 @@
+project_name: gosling
 builds:
   - main: ./cmd/gosling
     binary: gosling
@@ -23,25 +24,27 @@ changelog:
       - typo
       - Merge pull request
       - Merge branch
-archive:
-  replacements:
-    darwin: macOS
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
-  format_overrides:
-    - goos: windows
-      format: zip
-brew:
-  github:
-    owner: leonidboykov
-    name: homebrew-tap
-  folder: Formula
-  homepage: https://leonidboykov.github.io/gosling/
-  description: HTML redirects generator
-  test: |
-    system "#{bin}/gosling -v"
+archives:
+  - replacements:
+      darwin: macOS
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+snapcrafts:
+  - id: gosling
+brews:
+  - github:
+      owner: leonidboykov
+      name: homebrew-tap
+    folder: Formula
+    homepage: https://leonidboykov.github.io/gosling/
+    description: HTML redirects generator
+    test: system "#{bin}/gosling -v"
+    install: bin.install "getmoe"
 scoop:
   bucket:
     owner: leonidboykov
@@ -50,11 +53,16 @@ scoop:
   description: HTML redirects generator
   license: MIT
 dockers:
-  - image: leonidboykov/gosling
-    goos: linux
+  - goos: linux
     goarch: amd64
     goarm: ''
-    tag_templates:
-      - "{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
-      - "{{ .Major }}.{{ .Minor }}"
-      - latest
+    image_templates:
+      - "leonidboykov/gosling:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
+      - "leonidboykov/gosling:{{ .Major }}.{{ .Minor }}"
+      - "leonidboykov/gosling:latest"
+    build_flag_templates:
+      - "--pull"
+      - "--label=org.opencontainers.image.created={{ .Date }}"
+      - "--label=org.opencontainers.image.name={{ .ProjectName }}"
+      - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
+      - "--label=org.opencontainers.image.version={{ .Version }}"
