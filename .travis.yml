@@ -8,17 +8,17 @@ services:
 script:
   - go build ./cmd/gosling
 
-after_success:
-  - test -n "$TRAVIS_TAG" && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+# after_success:
+#   - test -n "$TRAVIS_TAG" && docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: curl -sL http://git.io/goreleaser | bash
-    on:
-      repo: leonidboykov/gosling
-      tags: true
-      condition: $TRAVIS_OS_NAME = linux
+# deploy:
+#   - provider: script
+#     skip_cleanup: true
+#     script: curl -sL http://git.io/goreleaser | bash
+#     on:
+#       repo: leonidboykov/gosling
+#       tags: true
+#       condition: $TRAVIS_OS_NAME = linux
 
 notifications:
   email: false
