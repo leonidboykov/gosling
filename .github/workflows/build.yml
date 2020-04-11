@@ -21,4 +21,4 @@ jobs:
           go-version: 1.14.x
       - run: |
           go build ./cmd/gosling
-          gosling -v
+          ./gosling -v
