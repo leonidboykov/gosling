@@ -37,7 +37,7 @@ archives:
 snapcrafts:
   - id: gosling
 brews:
-  - github:
+  - tap:
       owner: leonidboykov
       name: homebrew-tap
     folder: Formula
