@@ -1,6 +1,6 @@
 # Gosling
 
-[![GoDoc](https://godoc.org/github.com/leonidboykov/gosling?status.svg)](https://godoc.org/github.com/leonidboykov/gosling)
+[![Go Reference](https://pkg.go.dev/badge/github.com/leonidboykov/gosling.svg)](https://pkg.go.dev/github.com/leonidboykov/gosling)
 ![build](https://github.com/leonidboykov/gosling/workflows/build/badge.svg?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/leonidboykov/gosling)](https://goreportcard.com/report/github.com/leonidboykov/gosling)
 
