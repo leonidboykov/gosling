@@ -23,7 +23,7 @@ Docker
 
 Check out [docs](https://leonidboykov.github.io/gosling/) for additional information.
 
-Development documentation is available on [GoDoc](https://godoc.org/github.com/leonidboykov/gosling).
+Development documentation is available on [Go Reference](https://pkg.go.dev/github.com/leonidboykov/gosling#section-documentation).
 
 ## License
 
