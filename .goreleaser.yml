@@ -37,7 +37,7 @@ brews:
     test: system "#{bin}/gosling -v"
     install: bin.install "getmoe"
 scoops:
-  - bucket:
+  - repository:
       owner: leonidboykov
       name: scoop-bucket
     homepage: https://leonidboykov.github.io/gosling/
