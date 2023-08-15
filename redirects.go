@@ -17,10 +17,10 @@ type templateData struct {
 	RedirectURL string
 }
 
-// Redirects holds redirects
+// Redirects holds redirects.
 type Redirects map[string]string
 
-// NewRedirects parses redirects from a JSON files
+// NewRedirects parses redirects from JSON files.
 func NewRedirects(inpath string) (Redirects, error) {
 	jsonFile, err := os.Open(inpath)
 	if err != nil {
@@ -36,7 +36,7 @@ func NewRedirects(inpath string) (Redirects, error) {
 	return redir, nil
 }
 
-// BuildRedirects builds redirects to provided folder
+// BuildRedirects builds redirects to a provided folder.
 func BuildRedirects(redir Redirects, inpath string) error {
 	for from, to := range redir {
 		dstDir := path.Clean(path.Join(inpath, from))
@@ -50,15 +50,15 @@ func BuildRedirects(redir Redirects, inpath string) error {
 			return fmt.Errorf("unable to create a destination file %s: %s", dstFile, err)
 		}
 
-		if err := BuildRedirect(to, f); err != nil {
+		if err := buildRedirect(f, to); err != nil {
 			return fmt.Errorf("unable to build a redirect for %s: %s", to, err)
 		}
 	}
 	return nil
 }
 
-// BuildRedirect builds a redirect to a destination writer
-func BuildRedirect(link string, wr io.Writer) error {
+// buildRedirect builds a redirect to a destination writer.
+func buildRedirect(wr io.Writer, link string) error {
 	data := templateData{
 		RedirectURL: link,
 	}
