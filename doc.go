@@ -2,18 +2,18 @@
 //
 // Example:
 //
-//	package main
+//      package main
 //
-//	import (
-//		"fmt"
-//		"os"
+//      import (
+//              "fmt"
+//              "os"
 //
-//		"github.com/leonidboykov/gosling"
-//	)
+//              "github.com/leonidboykov/gosling"
+//      )
 //
-//	func main() {
-//		if err := gosling.BuildRedirect("https://example.com", os.Stdout); err != nil {
-//			fmt.Println(err)
-//		}
-//	}
+//      func main() {
+//              if err := gosling.BuildRedirect("https://example.com", os.Stdout); err != nil {
+//                      fmt.Println(err)
+//              }
+//      }
 package gosling
