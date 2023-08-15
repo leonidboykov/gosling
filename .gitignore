@@ -3,6 +3,7 @@ gosling
 !gosling/
 coverage.txt
 *.html
+!*.tmpl.html
 redirects.json
 
 ### GoReleaser ###

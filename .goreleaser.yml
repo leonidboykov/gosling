@@ -2,9 +2,6 @@ project_name: gosling
 builds:
   - main: ./cmd/gosling
     binary: gosling
-    goarch:
-      - 386
-      - amd64
     goos:
       - windows
       - darwin
@@ -12,26 +9,20 @@ builds:
     env:
       - CGO_ENABLED=0
 checksum:
-  name_template: '{{ .ProjectName }}_checksums.txt'
+  name_template: "{{ .ProjectName }}_checksums.txt"
 changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-      - '^chore:'
-      - '^repo:'
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+      - "^repo:"
       - typo
       - Merge pull request
       - Merge branch
 archives:
-  - replacements:
-      darwin: macOS
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
-    format_overrides:
+  - format_overrides:
       - goos: windows
         format: zip
 snapcrafts:
@@ -55,7 +46,7 @@ scoop:
 dockers:
   - goos: linux
     goarch: amd64
-    goarm: ''
+    goarm: ""
     image_templates:
       - "leonidboykov/gosling:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
       - "leonidboykov/gosling:{{ .Major }}.{{ .Minor }}"

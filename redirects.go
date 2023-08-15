@@ -1,6 +1,7 @@
 package gosling
 
 import (
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -9,19 +10,8 @@ import (
 	"path"
 )
 
-const defaultTemplate = `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting to {{ .RedirectURL }}</title>
-    <link rel="canonical" href="{{ .RedirectURL }}">
-    <meta http-equiv="refresh" content="0; url={{ .RedirectURL }}">
-    <meta name="robots" content="noindex,follow">
-  </head>
-  <body>
-    <a href="{{ .RedirectURL }}" alt="{{ .RedirectURL }}">Click here if you are not redirected.</a>
-  </body>
-</html>`
+//go:embed default.tmpl.html
+var defaultTemplate string
 
 type templateData struct {
 	RedirectURL string

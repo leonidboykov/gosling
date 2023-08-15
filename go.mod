@@ -1,3 +1,3 @@
 module github.com/leonidboykov/gosling
 
-go 1.14
+go 1.21
