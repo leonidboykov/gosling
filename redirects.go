@@ -50,15 +50,15 @@ func BuildRedirects(redir Redirects, inpath string) error {
 			return fmt.Errorf("unable to create a destination file %s: %s", dstFile, err)
 		}
 
-		if err := buildRedirect(f, to); err != nil {
+		if err := BuildRedirect(f, to); err != nil {
 			return fmt.Errorf("unable to build a redirect for %s: %s", to, err)
 		}
 	}
 	return nil
 }
 
-// buildRedirect builds a redirect to a destination writer.
-func buildRedirect(wr io.Writer, link string) error {
+// BuildRedirect builds a redirect to a destination writer.
+func BuildRedirect(wr io.Writer, link string) error {
 	data := templateData{
 		RedirectURL: link,
 	}

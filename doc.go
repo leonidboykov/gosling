@@ -12,7 +12,7 @@
 //      )
 //
 //      func main() {
-//              if err := gosling.BuildRedirect("https://example.com", os.Stdout); err != nil {
+//              if err := gosling.BuildRedirect(os.Stdout, "https://example.com"); err != nil {
 //                      fmt.Println(err)
 //              }
 //      }
