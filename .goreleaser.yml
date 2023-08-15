@@ -28,7 +28,7 @@ archives:
 snapcrafts:
   - id: gosling
 brews:
-  - tap:
+  - repository:
       owner: leonidboykov
       name: homebrew-tap
     folder: Formula
@@ -36,13 +36,13 @@ brews:
     description: HTML redirects generator
     test: system "#{bin}/gosling -v"
     install: bin.install "getmoe"
-scoop:
-  bucket:
-    owner: leonidboykov
-    name: scoop-bucket
-  homepage: https://leonidboykov.github.io/gosling/
-  description: HTML redirects generator
-  license: MIT
+scoops:
+  - bucket:
+      owner: leonidboykov
+      name: scoop-bucket
+    homepage: https://leonidboykov.github.io/gosling/
+    description: HTML redirects generator
+    license: MIT
 dockers:
   - goos: linux
     goarch: amd64
